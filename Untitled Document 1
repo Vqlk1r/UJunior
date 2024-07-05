@@ -1,0 +1,20 @@
+from microbit import *
+
+display.scroll(temperature())
+while True:
+    if temperature() < 15:
+        display.scroll("Cold")
+        sleep(1000)
+        display.show(Image.ASLEEP)
+        sleep(1000)
+    elif temperature() < 25:
+        display.scroll("Hot")
+        sleep(1000)
+        display.show(Image.HAPPY)
+        sleep(1000)
+    else:
+        display.scroll("Go Home")
+        sleep(1000)
+        display.show(Image.GHOST)
+        sleep(1000)
+        
